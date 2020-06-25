@@ -7,7 +7,7 @@ const createMarkup = quantity => {
 
   for (let i = 0; i < quantity; i++) {
   const block = document.createElement("div");
-  block.className = "item";
+  block.className = "items";
   block.innerText = i + 1;
 
   markup += block.outerHTML;
@@ -22,4 +22,31 @@ quantitySelector.addEventListener("change", e => {
 
   blocksContainer.innerHTML = markup;
 
-})
+});
+
+const colorTheBlock = (block, color) => {
+ block.style.backgroundColor = color; 
+}
+
+let changed = false; 
+
+colorSelector.addEventListener("change", e => {
+  const color = e.target.value;
+ const items_s = blocksContainer.querySelectorAll (".items");
+
+ changed = !changed;
+
+ for (let i = 0; i < items_s.length; i++) {
+   const currentBlock = items_s[i];
+   const blockNumber = i + 1;
+   let colorToApply = "";
+
+   if (changed) {
+     colorToApply = blockNumber % 2 != 0 ? color : "#fff"
+   } else {
+     colorToApply = blockNumber % 2 == 0 ? color : "#fff"
+   }
+
+   colorTheBlock(currentBlock, colorToApply);
+ }
+});

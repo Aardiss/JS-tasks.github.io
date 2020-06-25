@@ -102,7 +102,7 @@ ul {
 .blocks-coloring-container {
   padding: 60px 200px;
 }
-.blocks .item {
+.blocks .items {
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -110,6 +110,11 @@ ul {
   border: 1px solid #000;
   margin-right: 10px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid #444;
 }
 .controls {
   margin-bottom: 20px;
