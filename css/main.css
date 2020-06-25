@@ -15,6 +15,10 @@ a, a:visited, a:active, a:focus {
 .arrow {
   font-size: 30px;
 }
+.arrow:hover {
+  color: red;
+}
+
 .slider {
   display: flex;
   width: 300px;
